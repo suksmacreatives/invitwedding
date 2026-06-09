@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Undangan Pernikahan</title>
+</head>
+<body>
+    <div class="hero-wrapper">
+        <div class="content-box">
+            <div class="top-section">
+                <span class="sub-title">The Wedding Of</span>
+                <h1>Yande & Putri</h1>
+                <p class="date">15 . 06 . 2026</p>
+            </div>
+
+            <div class="bottom-section">
+                <div class="guest-info">
+                    <p>Kepada Yth:</p>
+                    <h2 id="guest-name">Bapak/Ibu/Saudara/i</h2>
+                </div>
+                <button onclick="bukaUndangan()">
+                    Buka Undangan
+                </button>
+            </div>
+        </div>
+    </div>
+    <audio id="myAudio" loop>
+    <source src="audio/Karmapala-DekUlik.mp3" type="audio/mpeg">
+</audio>
+<script>
+    // Memastikan musik lanjut dari status terakhir (jika ingin lebih canggih)
+    window.addEventListener("load", function() {
+        const audio = document.getElementById("viewAudio");
+        audio.play().catch(e => console.log("Menunggu interaksi pengguna"));
+    });
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

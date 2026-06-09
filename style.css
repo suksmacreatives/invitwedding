@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@200;400&display=swap');
+
+body, html { height: 100%; margin: 0; padding: 0; }
+:root {
+    /* Atur ukuran di sini sekali saja */
+    --font-title: 4.5rem;
+    --font-date: 3rem;
+    --font-guest: 3rem;
+    --font-sub: 2rem;
+}
+.hero-wrapper {
+    height: 100vh;
+    width: 100%;
+    /* Gunakan path ini. Pastikan folder 'images' ada di root */
+    background: url('images/cover.png') center/cover no-repeat;
+    background-color: #333; /* Fallback jika gambar gagal load */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Overlay agar teks terbaca */
+.hero-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.content-box {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    
+    /* [UBAH DI SINI] */
+    height: 100vh; /* Ubah ke 100vh agar bisa diatur dengan flex */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Mengubah dari space-between ke center */
+    align-items: center;    /* Memastikan semua berada di tengah */
+    gap: 15vh;              /* [PENTING] Mengatur jarak antara grup atas dan bawah */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.top-section { margin-top: 20px; }
+.bottom-section { margin-bottom: 20px; }
+
+.sub-title { font-family: 'Montserrat'; letter-spacing: 4px; text-transform: uppercase; font-size: var(--font-sub); }
+h1 { font-size: var(--font-title); margin: 10px 0; }
+.date { font-family: 'Montserrat'; margin-bottom: 30px; border-top: 1px solid white; display: inline-block; padding: 10px 20px; }
+
+button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 12px 30px;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { background: white; color: black; }
+/* Pengaturan khusus untuk layar HP */
+@media (max-width: 600px) {
+    .content-box {
+        gap: 10vh; /* Mengurangi jarak di HP agar lebih rapat */
+        padding: 20px;
+    }
+
+    h1 { 
+        font-size: 6rem !important; /* Dikecilkan sedikit agar lebih estetis di HP */
+    }
+
+    .bottom-section {
+        margin-bottom: 0; /* Hapus margin yang berlebihan */
+    }
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#e8e8e5;
+    font-family:'Cormorant Garamond', serif;
+    color:#444;
+}
+
+/* MUSIC BUTTON */
+.music-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    border:none;
+    background:none;
+    padding:0;
+
+    z-index:9999;
+
+    cursor:pointer;
+}
+
+.music-btn .icon-play,
+.music-btn .icon-play-off{
+    width:28px;
+    height:28px;
+
+    display:none;
+}
+
+.music-btn .active{
+    display:block;
+}
+
+/* HERO */
+
+.hero-section{
+    height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.45)
+    ),
+    url('images/cover.png') no-repeat center;
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+
+.hero-overlay{
+    color:white;
+    width:90%;
+    max-width:500px;
+}
+
+.save-date{
+    letter-spacing:4px;
+    font-size:14px;
+}
+
+.hero-name{
+    font-family:'Great Vibes', cursive;
+    font-size:4.5rem;
+}
+
+.hero-date{
+    letter-spacing:5px;
+}
+
+.hero-line{
+    width:120px;
+    height:1px;
+    background:white;
+    margin:25px auto;
+}
+
+.hero-quote{
+    line-height:1.8;
+}
+
+.wave-divider{
+    position:absolute;
+    left: 0;
+    right:0;
+    bottom:-1px;
+    line-height:0;
+    z-index:2;
+}
+
+.wave-divider svg{
+    width:100%;
+    height:100px;
+    display:block;
+}
+/* OPENING */
+
+.opening-section{
+    background:#4d4d4d;
+    color:white;
+    text-align:center;
+    padding:30px 25px 140px;
+    position:relative;
+    z-index:1;
+}
+
+.opening-section h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+/* COUPLE */
+
+.couple-section{
+    background:#e8e8e5;
+    padding:0 20px 70px;
+    position:relative;
+}
+.first-couple{
+    position:relative;
+
+    margin-top:-110px;
+
+    z-index:10;
+}
+.oval-photo{
+    width:220px;
+    height:300px;
+    object-fit:cover;
+    border-radius:150px;
+    box-shadow:  0 10px 30px rgba(0,0,0,.15);;
+}
+
+.nickname{
+    font-family:'Great Vibes', cursive;
+    font-size:3rem;
+    margin-top:20px;
+}
+
+.ampersand{
+    text-align:center;
+    font-size:4rem;
+    margin:40px 0;
+}
+
+.ig-btn{
+    display:inline-block;
+    background:#555;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+}
+
+/* GALLERY */
+.gallery-section{
+    padding:30px 20px;
+}
+.gallery-row{
+    overflow-x:auto;
+    margin-bottom:15px;
+    scrollbar-width:none;
+}
+.gallery-row::-webkit-scrollbar{
+    display:none;
+}
+.gallery-slider{
+    display:flex;
+    gap:12px;
+}
+.gallery-slider img{
+    width:140px;
+    height:190px;
+    object-fit:cover;
+    border-radius:12px;
+    flex-shrink:0;
+}
+
+/* WAVE */
+
+.wave{
+    line-height:0;
+    margin-top:-5px;
+}
+
+.wave svg{
+    display:block;
+    width:100%;
+    height:60px;
+}
+
+/* SAVE DATE */
+
+.save-date-section{
+    background:#4d4d4d;
+    padding:70px 20px;
+}
+
+.date-card{
+    border:1px solid rgba(255,255,255,.3);
+    max-width:400px;
+    margin:auto;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+.big-date{
+    font-size:5rem;
+}
+
+.month{
+    letter-spacing:4px;
+}
+
+.date-card hr{
+    margin:25px 0;
+}
+
+.location-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:white;
+    color:#333;
+    text-decoration:none;
+}
+/* OUR GALLERY */
+
+.gallery-grid-section{
+    padding:80px 20px;
+    background:#e8e8e5;
+}
+
+.gallery-title{
+    text-align:center;
+    font-family:'Great Vibes', cursive;
+    font-size:3.5rem;
+    color:#444;
+    margin-bottom:10px;
+}
+
+.gallery-subtitle{
+    text-align:center;
+    margin-bottom:40px;
+    color:#777;
+    letter-spacing:2px;
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2, 1fr);
+
+    gap:16px;
+}
+
+.gallery-grid img{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    background:white;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.12);
+
+    transition:.3s ease;
+}
+
+.gallery-grid img:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.18);
+}
+/* WEDDING GIFT */
+
+.gift-section{
+    padding:80px 20px;
+    background:#f4f1f1;
+    text-align:center;
+}
+
+.gift-title{
+    font-family:'Great Vibes', cursive;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.gift-desc{
+    max-width:500px;
+    margin:0 auto 40px;
+    line-height:1.8;
+}
+
+.gift-card{
+    max-width:450px;
+    margin:auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+}
+
+.bank-logo{
+    width:120px;
+    margin-bottom:25px;
+}
+
+.gift-label{
+    display:block;
+    font-size:.9rem;
+    color:#888;
+    margin-bottom:5px;
+}
+
+.gift-info h4{
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.rekening-box{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:#f8f8f8;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    padding:12px 15px;
+}
+
+.rekening-box span{
+    font-size:1.1rem;
+    font-weight:600;
+    letter-spacing:1px;
+}
+.rekening-number{
+    font-family: Arial, sans-serif;
+    font-size:1.5rem;
+    font-weight:600;
+
+    color:#222;
+}
+.copy-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+
+    font-size:20px;
+
+    color:#555;
+}
+/* QUOTE */
+
+.quote-section{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.quote-photo{
+    width:220px;
+    height:300px;
+    border-radius:150px;
+    object-fit:cover;
+}
+
+.quote-section h3{
+    font-family:'Great Vibes', cursive;
+    font-size:3rem;
+    margin:20px 0;
+}
+
+/* RSVP */
+
+.rsvp-section{
+    padding:70px 20px;
+}
+
+.submit-btn{
+    width:100%;
+    border:none;
+    padding:14px;
+    background:#555;
+    color:white;
+}
+
+/* FOOTER */
+
+.wedding-footer{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.85) 0%,
+            rgba(0,0,0,.65) 25%,
+            rgba(0,0,0,.35) 55%,
+            rgba(0,0,0,.15) 75%,
+            rgba(0,0,0,0) 100%
+        ),
+        url('images/cover.png');
+
+    background-size:cover;
+    background-position:center;
+
+    min-height:500px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.footer-overlay{
+
+    width:100%;
+
+    padding:120px 20px 50px;
+
+    color:white;
+
+    backdrop-filter:blur(2px);
+}
+
+.footer-couple{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:4rem;
+
+    margin-bottom:10px;
+}
+
+.footer-heart{
+
+    font-size:1.5rem;
+
+    margin-bottom:40px;
+
+    opacity:.9;
+}
+
+.footer-brand{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+.footer-logo{
+    width:120px;
+    height:auto;
+    object-fit:contain;
+}
+.footer-instagram{
+    color:white;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:1rem;
+    opacity:.9;
+}
+.footer-instagram:hover{
+    color:white;
+    opacity:1;
+}
+.footer-copy{
+    font-size:.9rem;
+    opacity:.8;
+    margin:0;
+}
+
+@media(max-width:768px){
+
+    .hero-name{
+        font-size:3.5rem;
+    }
+
+    .oval-photo{
+        width:180px;
+        height:250px;
+    }
+
+    .big-date{
+        font-size:4rem;
+    }
+}
